@@ -1,17 +1,31 @@
-// dom variables
-const CONTAINER = document.getElementById('container');
+// required DOM variables
+const MAIN = document.getElementById('main');
+// primary function to render main content
+const renderMainContent = currentView => {
+    // clear existing main content
+    MAIN.innerHTML = '';
 
-// currentView is the variable all content is rendered from
-let currentView = 'lawyer';
-// const currentView = 'advice';
+    if (currentView === 'lawyer') {
+        MAIN.appendChild(renderCarousel());
+        MAIN.appendChild(renderBrowse());
+    }
+    else {
+        // let sectionOne = document.createElement('section');
+        // MAIN.appendChild(sectionOne);
+    };
+};
+// render carousel content
+const renderCarousel = () => {
+    // create carousel element and set necessary attributes
+    let carousel = document.createElement('section');
+    carousel.setAttribute('id', 'carousel');
+    // add basic content
+    let heading = document.createElement('h3');
+    heading.textContent = 'Top-rated lawyers near you'
+    carousel.appendChild(heading);
+    // create the actual carousel
+    let carouselInner = document.createElement('div');
+    carouselInner.setAttribute('id', 'carousel__inner');
 
-// DOMContentLoaded triggers
-document.addEventListener('DOMContentLoaded', () => {
-    renderContent(currentView);
-});
-
-const renderContent = (currentView) => {
-    // begin by rendering the hero section as it is a constant
-    renderHeroContent(currentView);
-    // next move onto rendering the following sections of each page
+    return carousel;
 };
