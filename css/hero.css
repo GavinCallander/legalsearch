@@ -1,15 +1,22 @@
-#hero {
-    height: 70vh;
+/* all top level hero styling */
+.hero--advice {
     background-color: chartreuse;
+}
+.hero--lawyer {
+    background-color: cornflowerblue;
 }
 #hero h1 {
     max-width: 55vw;
 }
-
+/* all form styles */
 form {
     width: 100%;
     height: 30vh;
-    background-color: rebeccapurple;
+}
+input {
+    padding: 0.2rem;
+    width: 95%;
+    outline: none;
 }
 #form__header {
     display: flex;

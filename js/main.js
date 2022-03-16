@@ -1,6 +1,5 @@
 // dom variables
 const CONTAINER = document.getElementById('container');
-const HERO = document.getElementById('hero');
 
 // currentView is the variable all content is rendered from
 let currentView = 'lawyer';
