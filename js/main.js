@@ -45,9 +45,21 @@ const renderCarousel = () => {
 
     return carousel;
 };
+
 // render browse content
-const renderBrowse = (currentTab) => {
-    console.log(currentTab);
+    // renders browse content on initial load
+
+// render tabs
+    // renders tabs on initial load and subsequent toggles
+    // 
+
+// render list
+    // renders list on initial load and subsequent toggles
+    // must have access to the list DOM element and currentTab global variable
+
+
+// render browse content
+const renderBrowse = () => {
     const browse = document.createElement('section');
     browse.setAttribute('id', 'browse');
     // add basic content
@@ -62,11 +74,12 @@ const renderBrowse = (currentTab) => {
 
     let listHeader = document.createElement('div');
     listHeader.setAttribute('id', 'list__header');
-    renderTabs(listHeader, tabs);
 
     let list = document.createElement('div');
     list.setAttribute('id', 'list');
-    renderList(list, currentTab);
+    
+    renderTabs(listHeader, tabs, list);
+    renderList(list);
 
     listContainer.appendChild(listHeader);
     listContainer.appendChild(list);
@@ -75,38 +88,42 @@ const renderBrowse = (currentTab) => {
     
     return browse;
 };
-// function to render tabs for list toggling
-const renderTabs = (target, tabs) => {
-    console.log('hitting');
+
+const renderTabs = (target, tabs, list) => {
     target.innerHTML = '';
     tabs.forEach(tab => {
-        let tabElement = document.createElement('div');
+        let tabElem = document.createElement('div');
         let tabClass = tab === currentTab ? 'tab tab--active' : 'tab';
-        tabElement.setAttribute('class', tabClass);
-        tabElement.setAttribute('name', tab);
+        tabElem.setAttribute('class', tabClass);
+        tabElem.setAttribute('name', tab);
         let tabText = document.createElement('p');
         tabText.textContent = `By ${tab}`;
-        tabElement.appendChild(tabText);
-        tabElement.addEventListener('click', e => toggleTabs(e, target, tabs));
-        target.appendChild(tabElement);
-    });
+        tabElem.appendChild(tabText);
+        tabElem.addEventListener('click', e => toggleTabs(e, target, tabs, list));
+        target.appendChild(tabElem);
+    })
 };
-// function to handle tab toggling
-// updates active tab display and list being shown
-const toggleTabs = (e) => {
-    console.log('hitting');
-    // toggles current tabs, just need to address the identifier of which is active in styling
+const renderList = (list) => {
+    list.innerHTML = '';
+    if (currentTab === 'state') {
+        statesList.forEach(state => {
+            let listItemContainer = document.createElement('div');
+            let listItem = document.createElement('a');
+            listItem.setAttribute('class', 'list__item');
+            listItem.textContent = state;
+            listItemContainer.appendChild(listItem);
+            list.appendChild(listItemContainer);
+        });
+    }
+    else {
+        let content = document.createElement('h2');
+        content.textContent = 'Well, now, looks like an error!';
+        list.appendChild(content);
+    };
+};
+
+const toggleTabs = (e, target, tabs, list) => {
     currentTab = e.currentTarget.getAttribute('name');
-    renderBrowse(currentTab);
-};
-// function to handle list display
-const renderList = (target, currentTab) => {
-    // confirm the current tab and use this to render content
-    // using states for all for the time being
-    statesList.forEach(state => {
-        let listItem = document.createElement('a');
-        listItem.setAttribute('class', 'list__item');
-        listItem.textContent = state;
-        target.appendChild(listItem);
-    });
+    renderTabs(target, tabs, list);
+    renderList(list);
 };
