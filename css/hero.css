@@ -1,0 +1,23 @@
+#hero {
+    height: 70vh;
+    background-color: chartreuse;
+}
+#hero h1 {
+    max-width: 55vw;
+}
+
+form {
+    width: 100%;
+    height: 30vh;
+    background-color: rebeccapurple;
+}
+#form__header {
+    display: flex;
+    justify-content: flex-start;
+}
+#form__header h4 {
+    margin-right: 0.5rem;
+}
+#form__header h4:hover {
+    cursor: pointer;
+}

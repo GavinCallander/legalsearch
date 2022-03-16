@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LegalSearch</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
     <nav></nav>
@@ -24,8 +25,17 @@
             <h1>Experienced lawyers are ready to help</h1>
             <!-- form -->
             <!-- has two toggle-able options: find a lawyer; get advice -->
-            <!-- each changes form content and background image for entire hero section -->
-            <form></form>
+            <!-- each changes the entire homepage display -->
+            <form>
+                <div id="form__header">
+                    <h4 class="toggle" id="lawyer">
+                        Find a lawyer
+                    </h4>
+                    <h4 class="toggle" id="advice">
+                        Get advice
+                    </h4>
+                </div>
+            </form>
             <!-- attorney profile box -->
             <!-- only displays on find a lawyer -->
             <aside>
@@ -52,5 +62,7 @@
             <!-- this is the only part that really only needs styling -->
         </footer>
     </div>
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
