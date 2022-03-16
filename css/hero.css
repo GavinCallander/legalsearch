@@ -21,3 +21,8 @@ form {
 #form__header h4:hover {
     cursor: pointer;
 }
+
+.toggle--active {
+    text-decoration: underline;
+    /* add color and line thickness before final deploy */
+}

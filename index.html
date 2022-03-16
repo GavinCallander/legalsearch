@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav></nav>
-    <div>
+    <div id="container">
         <header>
             <!-- mobile only -->
             <!-- hamburger menu for nav activation -->
@@ -22,7 +22,7 @@
         </header>
         <!-- hero section -->
         <section id="hero">
-            <h1>Experienced lawyers are ready to help</h1>
+            <h1 id="hero__heading"><!-- text content rendered based on currentView --></h1>
             <!-- form -->
             <!-- has two toggle-able options: find a lawyer; get advice -->
             <!-- each changes the entire homepage display -->
@@ -35,6 +35,8 @@
                         Get advice
                     </h4>
                 </div>
+                <div id="inputs"></div>
+                <input type="submit" value="search">
             </form>
             <!-- attorney profile box -->
             <!-- only displays on find a lawyer -->
@@ -43,26 +45,27 @@
             </aside>
         </section>
         <!-- carousel section -->
-        <section id="carousel">
-            <h2>Top-rated lawyers near you</h2>
+        <!-- <section id="carousel"> -->
+            <!-- <h2>Top-rated lawyers near you</h2> -->
             <!-- actual carousel -->
             <!-- on mobile, moves on swipe -->
             <!-- moves over by one practice area (i.e. by a set width) -->
             <!-- each carousel item has a practice area; an example attorney profile; a call to action -->
-        </section>
+        <!-- </section> -->
         <!-- browse section -->
-        <section id="browse">
-            <h2>Browse Attorneys</h2>
+        <!-- <section id="browse"> -->
+            <!-- <h2>Browse Attorneys</h2> -->
             <!-- Essentially, three large lists of links that can be selected at the top -->
             <!-- Practice area; city; state -->
             <!-- all the content for each -->
             <!-- we'll be rendering this in JS -->
-        </section>
+        <!-- </section> -->
         <footer>
-            <!-- this is the only part that really only needs styling -->
+            <!-- only aspect of site that absolutely can be hard coded in HTML -->
         </footer>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/form.js"></script>
 </body>
 </html>

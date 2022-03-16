@@ -40,16 +40,3 @@ section {
 }
 
 
-#hero {
-    height: 70vh;
-    background-color: chartreuse;
-}
-#hero h1 {
-    max-width: 55vw;
-}
-
-form {
-    width: 100%;
-    height: 30vh;
-    background-color: rebeccapurple;
-}
